@@ -5,11 +5,13 @@ Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach 
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedyńczej aplikacji w python-ie:
-
+- Wczesniej wykonac forka. Link z materialow.Pozniej clone
   ::
 
-    source /usr/bin/virtualenvwrapper.sh
-    mkvirtualenv wsb-simple-flask-app
+    source /usr/bin/virtualenvwrapper.sh #dopisac do pliku bashrc
+    mkvirtualenv wsb-simple-flask-app #Jezeli 3 poniższe komendy
+    nie zadziałalaj to trzeba zainstalwoac komponenty z sekcji Pomocnicza
+    logujac sie jako su
     pip install -r requirements.txt
     pip install -r test_requirements.txt
 
