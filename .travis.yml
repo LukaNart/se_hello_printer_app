@@ -9,6 +9,7 @@ install:
 # command to run tests
 script:
   - make test
-after_sucess:
+
+after_success:
   - make docker_build
   - make docker_push
