@@ -1,4 +1,6 @@
 language: python
+services:
+  -docker
 python:
   - "2.7"
 # command to install dependencies
@@ -7,3 +9,5 @@ install:
 # command to run tests
 script:
   - make test
+after_sucess:
+  -make docker_build
