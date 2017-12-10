@@ -5,6 +5,7 @@ from flask import request
 
 moje_imie = "Lukasz"
 msg = "Hello World!"
+nazwisko = "Nartowski"
 
 
 @app.route('/')
@@ -12,7 +13,7 @@ def index():
     output = request.args.get('output')
     if not output:
         output = PLAIN
-    return get_formatted(msg, moje_imie,
+    return get_formatted(msg, moje_imie, nazwisko,
                          output.lower())
 
 
