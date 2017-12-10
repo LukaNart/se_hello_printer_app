@@ -11,3 +11,4 @@ script:
   - make test
 after_sucess:
   -make docker_build
+  -make docker_push
