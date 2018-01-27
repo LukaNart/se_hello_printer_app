@@ -21,12 +21,12 @@ def get_formatted(msg, imie, nazwisko, format):
 
 
 def format_to_json(msg, imie, nazwisko):
-    return ('{ "imie":"' + imie + '","nazwisko":"'+nazwisko+'", "mgs":' +
+    return ('{ "imie":"' + imie + '","nazwisko":"' + nazwisko + '","mgs":"' +
             msg + '"}')
 
 
 def plain_text(msg, imie, nazwisko):
-    return imie + ' '+ nazwisko +' ' + msg
+    return imie + ' ' + nazwisko + ' ' + msg
 
 
 def plain_text_upper_case(msg, imie, nazwisko):
