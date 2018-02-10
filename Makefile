@@ -21,10 +21,10 @@ docker_run: docker_build
 		-d hello-world-printer
 docker_push: docker_build
 	@docker login --username $(USERNAME) --password Fant0mas; \
-	docker tag hello-world-printer $(TAG); \
 	docker run --rm -v "$PWD":/app treeder/bump patch
 	version = 'cat VERSION'
 	echo "version: $version"
+	docker tag hello-world-printer $(TAG):latest $(TAG):$version
 	docker push $(TAG); \
 	docker push $(TAG):$version; \
 	docker logout;
