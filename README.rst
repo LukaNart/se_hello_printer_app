@@ -15,6 +15,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
     logujac sie jako su
     pip install -r requirements.txt
     pip install -r test_requirements.txt
+    f
 
 - Uruchamianie applikacji:
 
