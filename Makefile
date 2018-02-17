@@ -1,7 +1,9 @@
 
 .PHONY: test
 USERNAME=luknar
-TAG=$(USERNAME)/hello-world-printer
+SERVICE_NAME=hello-world-printer
+MY_DOCKER_NAME=$(SERVICE_NAME)
+TAG=$(USERNAME)/$(MY_DOCKER_NAME)
 
 deps:
 	pip install -r requirements.txt; \
@@ -10,21 +12,19 @@ lint:
 	flake8 hello_world test
 test:
 	PYTHONPATH=. py.test  --verbose -s
+test_smoke:
+	curl -I --fail 127.0.0.1:5000
 run:
 	python main.py
 docker_build:
-	docker build -t hello-world-printer .
+	docker build -t $(MY_DOCKER_NAME) .
 docker_run: docker_build
 	docker run \
 		--name hello-world-printer-dev \
 		-p 5000:5000 \
-		-d hello-world-printer
+		-d $(MY_DOCKER_NAME)
 docker_push: docker_build
-	@docker login --username $(USERNAME) --password Fant0mas; \
-	docker run --rm -v "$PWD":/app treeder/bump patch
-	version = 'cat VERSION'
-	echo "version: $version"
-	docker tag hello-world-printer $(TAG):latest $(TAG):$version
+	@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
+	docker tag $(MY_DOCKER_NAME) $(TAG); \
 	docker push $(TAG); \
-	docker push $(TAG):$version; \
 	docker logout;
