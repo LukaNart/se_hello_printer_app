@@ -14,3 +14,7 @@ script:
 after_success:
   - make docker_build
   - make docker_push
+  deploy:
+  provider: heroku
+  api_key: $(HEROKU_API_KEY)
+  app: protected-escarpment-37850
