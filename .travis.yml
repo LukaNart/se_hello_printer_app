@@ -7,9 +7,8 @@ python:
 install:
   - make deps
 # command to run tests
-lint:
-  - make lint
 script:
+  - make lint
   - make test
 
 after_success:
