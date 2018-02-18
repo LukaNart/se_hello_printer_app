@@ -1,10 +1,10 @@
 Simple Flask App
 ================
-# logo "build status" z TravisCi wyswietlane na moim GitHub
+
 .. image:: https://travis-ci.org/LukaNart/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.org/LukaNart/se_hello_printer_app
-# logo z Statuscake
-..<a href="https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=gUNlxoMDQe&Days=1&Design=1" /></a>
+    
+.. image:: https://app.statuscake.com/button/index.php?Track=gUNlxoMDQe&Days=1&Design=1
 
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
