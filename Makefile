@@ -31,5 +31,4 @@ docker_push: docker_build
 test_cov:
 	PYTHONPATH=. py.test --verbose -s --cov=.
 test_xunit:
-	PYTHONPATH=. py.test --verbose -s --cov=. --junit-xml=test_res
-ults.xml
+	PYTHONPATH=. py.test --verbose -s --cov=. --junit-xml=test_results.xml
