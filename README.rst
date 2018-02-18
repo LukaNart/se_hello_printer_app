@@ -3,7 +3,7 @@ Simple Flask App
 
 .. image:: https://travis-ci.org/LukaNart/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.org/LukaNart/se_hello_printer_app
-    
+
 .. image:: https://app.statuscake.com/button/index.php?Track=gUNlxoMDQe&Days=1&Design=1
 
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
@@ -54,11 +54,43 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
     konfiguracja znajduje sie w pliku .travis.yaml
     W tym pliku są tez sekcje do uruchamiania dockera, oraz
-    do deploy-a naszej apki na heroku
+    do deploy-a naszej apki na heroku. TravisCi po każdej zmianie,
+    np. dostarczeniu nowej funkcjonalności odpala za nas testy i aplikacje.
+    Maszyna robi za mnie to co musialbym recznie robic po kazdej zmianie kodu.
+
+
+- Konfiguracja Heroku
+
+  ::
+
+    dodanie gunicorn do pliku requirements.txt. Gunicorn to interfejs miedzy
+    moja aplikacja , serwisem webowym (heroku) i frameworkiem. Trzeba go zainstalowac
+    wykonac: make deps, lub pip install gunicorn
+    testowanie dzialania gunicorna-a w jednym oknie terminala wywolanie:
+    PYTHONPATH=$PYTHONPATH:$(pwd) gunicorn hello_world:app
+    w drugim oknie:
+    curl 127.0.0.1:8000
+    Stworzenie pliku Procfile -plik z informacja dla Heroku o serwisie webowym:
+    web: gunicorn hello_world:app
+    Stworzenie pliku runtime.txt - informacja dla Heroku o wersji pythona:
+    python-2.7.14
+    Instalacja heroku na lokalnej maszynie.Link do stronki z opisem
+    https://devcenter.heroku.com/articles/heroku-cli - sekcja Standalone installation
+    Wazne, żeby wszystkie polecenia z listeningu wykonywac jako su i byc w domwym
+    katalogu nie w katalogu gdzie jest sciagniete repo!!!. pamietac o wpisaniu
+    odpowiedniej wersji systemu operacyjnego, architektury i sciagnietej wersji
+    heroku - polecenia wget oraz mv.Dalsze polecenie wedlug instrukcji z zajec -
+    odpalenie lokalnie heroku oraz wyslanie apki na platforme Heroku
+    Heroku ma uwierzytelnianie asymetryczne. Posiada publiczny kod, prywatny kod
+    jest generowany prze zemnie : komenda:heroku auth:token w terminalu zwraca
+    token, ktory trzeba zapisac do Travisa (sekcja settings, variables) jako
+    zmienna ukryta.W ten sposob heroku bedzie wiedziec ze to co proubujemy
+    "zdeployowac" na walsnym koncie pochodzi odemnie.
+
 
 - Monitoring aplikacji na statuscake
 
-..::
+  ::
 
     Po zalogowaniu na https://app.statuscake.com/ mozna podejrzec
     status deploy-a naszej apliakcji z heroku. Wygenerowany z Heroku link
