@@ -1,12 +1,18 @@
 Simple Flask App
 ================
+# logo "build status" z TravisCi wyswietlane na moim GitHub
 .. image:: https://travis-ci.org/LukaNart/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.org/LukaNart/se_hello_printer_app
+# logo z Statuscake
+..<a href="https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=gUNlxoMDQe&Days=1&Design=1" /></a>
+
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
-- Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedyńczej aplikacji w python-ie:
-- Wczesniej wykonac forka. Link z materialow.Pozniej clone
+- Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne
+  środowisko dla pojedyńczej aplikacji w python-ie:
+- Na początku wykonaliśmy forka na GitHubie gotowego projektu z konta Wojtka.
+  Link z materialow. Pozniej robilismy git clone.
   ::
 
     source /usr/bin/virtualenvwrapper.sh #dopisac do pliku bashrc
@@ -15,9 +21,9 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
     logujac sie jako su
     pip install -r requirements.txt
     pip install -r test_requirements.txt
-    
 
-- Uruchamianie applikacji:
+
+- Uruchamianie aplikacji:
 
   ::
 
@@ -46,7 +52,19 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
   ::
 
-    ...
+    konfiguracja znajduje sie w pliku .travis.yaml
+    W tym pliku są tez sekcje do uruchamiania dockera, oraz
+    do deploy-a naszej apki na heroku
+
+- Monitoring aplikacji na statuscake
+
+..::
+
+    Po zalogowaniu na https://app.statuscake.com/ mozna podejrzec
+    status deploy-a naszej apliakcji z heroku. Wygenerowany z Heroku link
+    (wziety z logow builda z Travisa) jest odpytywany co 5 min przez Statuscake
+    z dwoch miejsc na swiecie. Dodalem tez link do logo ze Statuscake, mowiace
+    o statusie odpytan, ktore bedzie wystwietlane w moim GitHub.
 
 
 Pomocnicze
