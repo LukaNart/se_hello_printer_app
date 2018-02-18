@@ -6,7 +6,8 @@ Simple Flask App
 
 .. image:: https://app.statuscake.com/button/index.php?Track=gUNlxoMDQe&Days=1&Design=1
 
-.. image:: https://api.codacy.com/project/badge/Grade/9a8c9cb37d344a13adb29c5b19a5747e    :target: https://www.codacy.com/app/LukaNart/se_hello_printer_app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LukaNart/se_hello_printer_app&amp;utm_campaign=Badge_Grade
+.. image:: https://api.codacy.com/project/badge/Grade/9a8c9cb37d344a13adb29c5b19a5747e
+    :target: https://www.codacy.com/app/LukaNart/se_hello_printer_app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LukaNart/se_hello_printer_app&amp;utm_campaign=Badge_Grade
 
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
