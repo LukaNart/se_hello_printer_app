@@ -28,3 +28,8 @@ docker_push: docker_build
 	docker tag $(MY_DOCKER_NAME) $(TAG); \
 	docker push $(TAG); \
 	docker logout;
+test_cov:
+	PYTHONPATH=. py.test --verbose -s --cov=.
+test_xunit:
+	PYTHONPATH=. py.test --verbose -s --cov=. --junit-xml=test_res
+ults.xml
