@@ -12,10 +12,10 @@ lint:
 	flake8 hello_world test
 test:
 	PYTHONPATH=. py.test  --verbose -s
-test_smoke:
-	curl -I --fail 127.0.0.1:5000
 run:
 	python main.py
+test_smoke:
+		curl -I --fail 127.0.0.1:5000
 docker_build:
 	docker build -t $(MY_DOCKER_NAME) .
 docker_run: docker_build
